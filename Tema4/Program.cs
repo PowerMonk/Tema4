@@ -17,38 +17,33 @@ class program
         Console.WriteLine("6.- Salir");
 
         int[] arr = new int[10];
-
-
         int opcion = Convert.ToInt32(Console.ReadLine());
 
         switch (opcion)
         {
             case 1:
 
-                bool vectorLleno = true;
-                if (vectorLleno) { }
-                for (int i = 0; i < arr.Length; i++)
-                {
-                    if (arr[i] == 0)
-                    {
-                        // Si al menos un elemento es 0, el vector no está lleno
-                        vectorLleno = false;
-                        break;
-                    }
+                int tam=arr.Count();
+                //variable aux i++ if i == 10 break cwl
+                Console.WriteLine(tam);
+                bool vectorLleno = false;
+                if (tam ==10){ 
+                    vectorLleno=true;
                 }
 
                 // Mostrar mensaje si el vector está lleno
                 if (vectorLleno)
                 {
                     Console.WriteLine("Vector lleno. No es posible ingresar más valores.");
-                    break;  // Salir del case 1
+                    goto Menu;
+                    
                 }
 
                 for (int i = 0; i < arr.Length; i++)
                 {
                     Console.WriteLine("Ingresa el valor número " + (i + 1) + ": ");
                     arr[i] = Convert.ToInt32(Console.ReadLine());
-                    if (arr[i] % 2 != 0)
+                    if (arr[i] % 2 != 0 && arr[i] != 0)
                     {
                         Console.WriteLine("El número que ingresaste no es par");
                         i--;
@@ -61,16 +56,6 @@ class program
                     }
                     Console.WriteLine("");
                 }
-                Console.WriteLine("Vector lleno. No es posible ingresar más valores.");
-
-                if (vectorLleno)
-                {
-                    Console.WriteLine("Vector lleno. No es posible ingresar más valores.");
-                    break;
-                }
-
-                goto Menu;
-
                     
                
 
