@@ -26,6 +26,7 @@ class program
             case 1:
 
                 bool vectorLleno = true;
+                if (vectorLleno) { }
                 for (int i = 0; i < arr.Length; i++)
                 {
                     if (arr[i] == 0)
